@@ -13,7 +13,7 @@ function twodigits(v)
 
 
 function format(cdate)
-{	
+{
 		var date = new Date(cdate);
         var day = twodigits(date.getDate());
         var month = twodigits(date.getMonth() + 1);
@@ -23,7 +23,7 @@ function format(cdate)
 		return(" "+day+"/"+month+" "+hours+"h"+minutes);
 }
 
-function decodeEntities(encodedString) 
+function decodeEntities(encodedString)
 {
     var textArea = document.createElement('textarea');
     textArea.innerHTML = encodedString;
@@ -36,24 +36,28 @@ function indexOf(t,o)
 		var limit = t.length;
 		var trouve=false;
 		var i=0;
-		while( (!trouve) && (i<limit)) 
+		while( (!trouve) && (i<limit))
 		{
 			var c=t[i];
+      if(typeof c !== 'undefined'&&c!=null){
 			if ((c.titre == o.titre) && (c.date==o.date))
 			{
 				trouve=true;
 			}
+    }
 			i++;
-		}
+
+  }
 		if (trouve) {return (i-1);}
 		else { return -1; }
+
 }
 
 function getCookie(cname)
 	{
     	var name = cname + "=";
     	var ca = document.cookie.split(';');
-    	for(var i=0; i<ca.length; i++) 
+    	for(var i=0; i<ca.length; i++)
     	{
         	var c = ca[i];
         	while (c.charAt(0)==' ') c = c.substring(1);

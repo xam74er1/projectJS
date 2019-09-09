@@ -6,34 +6,38 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="news.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="jquery-ui.css">
 </head>
-<body onload="init();">
-	<h1 class="nom"> <img id="banniere" src="job.png"/> </h1>
+<body>
+		
+	<h1 class="nom"> Projet JS</h1> 
 	<div id="recherches">
-		<h3 class="titre"> recherches stockées</h3>
-		<div id="recherches-stockees">
-		</div>
 		<h3 class="titre">nouvelle recherche</h3>
 		<div id="nouvelle-recherche">
-			<input type="text" name="zone_saisie" class="ui-autocomplete-input" id="zone_saisie"/>
-			<img id="bouton_disque" class="icone-disk" src="disk30.jpg" onclick="ajouter_recherche()" />
-			<BR/>
-			<input type="button" value="OK" onclick="rechercher_nouvelles()"/>
+			<input type="text" name="zone_saisie" class="ui-autocomplete-input" id="zone_saisie" title="Séparez par des virgules pour rechercher plusieurs mots-clés " placeholder="java c++"/>
+			<img id="bouton_disque" class="icone-disk" src="img/plus.png" />
+			<input type="button" value="OK" id="bouton_ok"/>
+			<br>
+			<input type="button" value="Vider l'historique" id="delete_history"/>
+		</div>
+		<h3 class="titre"> recherches stockées</h3>
+		<div id="recherches-stockees">
 		</div>
 	</div>
 	<div id="zone-centrale">
 		<div id="resultats-container">
 			<h3 class="titre">résultats</h3>
 			<div id="wait"></div>
-			<ul id="resultats">
-
-
-			</ul>
+			<ul id="resultats"></ul>
 		</div>
+	</div>
+
+		
 	<script src="jquery-3.2.1.js"></script>
 	<script src="jquery-migrate-3.0.0.min.js"></script>
 	<script src="jquery-ui.js"></script>
     <script src="jquery.cookie.js"></script>
 	<script src="util.js"></script>
-	<script src="news.js"></script>
+	<script src="model.js"></script>
+	<script src="view.js"></script>
+	<script src="controller.js"></script>
 </body>
 </html>
